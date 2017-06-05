@@ -6,6 +6,12 @@ angular.module('devmtnTravel', ['ui.router'])
                 templateUrl: "../views/about.html"
             })
 
+            .state('adventurers',{
+                url:'/adventurers',
+                parent:'home',
+                templateUrl: "../views/about-adventurers.html"
+            })
+
             .state('packages',{
                url:'/packages/:country',
                templateUrl: "../views/packages.html",
@@ -26,9 +32,13 @@ angular.module('devmtnTravel', ['ui.router'])
 
             .state('contact', {
               url: '/contact',
+              parent: 'home',
               templateUrl: '../views/contact.html'
             })
 
         $urlRouterProvider
             .otherwise('/');
     });
+
+
+  
